@@ -1246,7 +1246,7 @@ a {
 
 @media (max-width: 36rem) {
     .topbar .container {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 
