@@ -905,6 +905,9 @@ a {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .contact-icon {
@@ -920,6 +923,8 @@ a {
 .contact-info-text {
     font-size: 1rem; /* 16px */
     color: var(--text-light);
+    white-space: normal;
+    overflow: visible;
 }
 
 .contact-social {
@@ -942,6 +947,7 @@ a {
     border-radius: 0.5rem;
     box-shadow: var(--shadow-md);
     margin-bottom: 1.5rem;
+    
 }
 
 .contact-form-title {
@@ -949,6 +955,8 @@ a {
     font-weight: 700;
     margin-bottom: 1.25rem;
 }
+
+
 
 .contact-form-grid {
     display: grid;
@@ -1210,7 +1218,10 @@ a {
 
     .contact-info-item {
         font-size: 0.875rem; /* 14px */
-        max-width: 12rem;
+        max-width: 48rem;
+        flex-direction: row;
+        flex: 1;
+        word-break: break-word;
     }
 
     .social-links {
@@ -1320,7 +1331,8 @@ a {
 
     .contact-info-item {
         font-size: 0.75rem; /* 12px */
-        max-width: 10rem;
+        max-width: 48rem;
+        
     }
 
     .social-links {
