@@ -97,6 +97,8 @@
                                 <a href="products.html#feed-processing-machines" class="dropdown-item">Feed Processing Machines</a>
                                 <a href="ppe.html" class="dropdown-item">Personal Protective Equipment</a>
                                 <a href="products.html#turnkey-projects" class="dropdown-item">Turnkey Projects</a>
+                                <a href="products.html#cctv-installation" class="dropdown-item">CCTV Installation</a>
+                                <a href="products.html#electrical-items" class="dropdown-item">Electrical Items</a>
                             </div>
                         </div>
                     </div>
@@ -702,89 +704,98 @@
         </div>
     </section>
 
-    <section id="quote" class="quote-section" aria-labelledby="quote-title">
-        <div class="container">
-            <div class="quote-container">
-                <div class="quote-header">
-                    <h2 class="section-title" id="quote-title">Get a Free Quote</h2>
-                    <p class="section-description">Fill out the form below and our team will get back to you within 24 hours with a customized quote for your project.</p>
-                </div>
-                
-                <form id="quote-form" class="quote-form" aria-label="Request a quote form">
-                    <div class="quote-form-grid">
-                        <div>
-                            <label for="name" class="form-label">Full Name</label>
-                            <input type="text" id="name" name="name" class="form-input" placeholder="John Smith" required aria-required="true">
-                        </div>
-                        <div>
-                            <label for="company" class="form-label">Company Name</label>
-                            <input type="text" id="company" name="company" class="form-input" placeholder="Your Company Ltd.">
-                        </div>
-                        <div>
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required aria-required="true">
-                        </div>
-                        <div>
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+254 748 411 810" pattern="\+?[1-9]\d{1,14}" aria-describedby="phone-help">
-                            <small id="phone-help" class="form-help">Enter a valid phone number (e.g., +254 748 411 810)</small>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label class="form-label">Service Type</label>
-                        <div class="service-checkboxes">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="mechanical" name="services" value="mechanical" class="custom-checkbox-input">
-                                <div id="mechanical-checkbox" class="custom-checkbox" data-checked="false" aria-hidden="true"></div>
-                                <label for="mechanical" class="checkbox-label">Mechanical Engineering</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="electrical" name="services" value="electrical" class="custom-checkbox-input">
-                                <div id="electrical-checkbox" class="custom-checkbox" data-checked="false" aria-hidden="true"></div>
-                                <label for="electrical" class="checkbox-label">Electrical Solutions</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="automation" name="services" value="automation" class="custom-checkbox-input">
-                                <div id="automation-checkbox" class="custom-checkbox" data-checked="false" aria-hidden="true"></div>
-                                <label for="automation" class="checkbox-label">Industrial Automation</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="conveying" name="services" value="conveying" class="custom-checkbox-input">
-                                <div id="conveying-checkbox" class="custom-checkbox" data-checked="false" aria-hidden="true"></div>
-                                <label for="conveying" class="checkbox-label">Conveying Systems</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="turnkey" name="services" value="turnkey" class="custom-checkbox-input">
-                                <div id="turnkey-checkbox" class="custom-checkbox" data-checked="false" aria-hidden="true"></div>
-                                <label for="turnkey" class="checkbox-label">Turnkey Projects</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="ppe" name="services" value="ppe" class="custom-checkbox-input">
-                                <div id="ppe-checkbox" class="custom-checkbox" data-checked="false" aria-hidden="true"></div>
-                                <label for="ppe" class="checkbox-label">Personal Protective Equipment</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label for="project-details" class="form-label">Project Details</label>
-                        <textarea id="project-details" name="project-details" rows="4" class="form-textarea" placeholder="Please provide details about your project requirements..." required aria-required="true"></textarea>
-                    </div>
-                    
-                    <div class="terms-checkbox">
-                        <input type="checkbox" id="terms" name="terms" class="custom-checkbox-input" required aria-required="true">
-                        <div id="terms-checkbox" class="custom-checkbox" data-checked="false" aria-hidden="true"></div>
-                        <label for="terms" class="checkbox-label">I agree to the <a href="#" class="terms-link">Terms & Conditions</a> and <a href="#" class="terms-link">Privacy Policy</a></label>
-                    </div>
-                    
-                    <div class="form-submit">
-                        <button type="submit" class="submit-button" aria-label="Submit quote request">Submit Request</button>
-                    </div>
-                </form>
-            </div>
+   <section id="quote" class="quote-section" aria-labelledby="quote-title">
+    <div class="container quote-container">
+        <div class="quote-header">
+            <h2 class="section-title" id="quote-title">Get a Free Quote</h2>
+            <p class="section-description">Fill out the form below and our team will get back to you within 24 hours with a customized quote for your project.</p>
         </div>
-    </section>
+        
+        <form id="quote-form" class="quote-form-grid" aria-label="Request a quote form">
+            <div class="form-group">
+                <label for="quote-name" class="form-label">Full Name</label>
+                <input type="text" id="quote-name" name="name" class="form-input" placeholder="John Smith" required aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="quote-company" class="form-label">Company Name</label>
+                <input type="text" id="quote-company" name="company" class="form-input" placeholder="Your Company Ltd.">
+            </div>
+            <div class="form-group">
+                <label for="quote-email" class="form-label">Email Address</label>
+                <input type="email" id="quote-email" name="email" class="form-input" placeholder="john@example.com" required aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="quote-phone" class="form-label">Phone Number</label>
+                <input type="tel" id="quote-phone" name="phone" class="form-input" placeholder="+254 740 411 740" pattern="\+?[1-9]\d{1,14}" aria-describedby="phone-help">
+                <small id="phone-help" class="form-help">Enter a valid phone number (e.g., +254 740 411 740)</small>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Service Type</label>
+                <div class="service-checkboxes">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mechanical" name="services[]" value="mechanical" class="custom-checkbox-input">
+                        <label for="mechanical" class="checkbox-label">Mechanical Engineering</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="electrical" name="services[]" value="electrical" class="custom-checkbox-input">
+                        <label for="electrical" class="checkbox-label">Electrical Solutions</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="automation" name="services[]" value="automation" class="custom-checkbox-input">
+                        <label for="automation" class="checkbox-label">Industrial Automation</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="steel-fabrication" name="services[]" value="steel-fabrication" class="custom-checkbox-input">
+                        <label for="steel-fabrication" class="checkbox-label">Steel Fabrication</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="conveying" name="services[]" value="conveying" class="custom-checkbox-input">
+                        <label for="conveying" class="checkbox-label">Conveying Systems</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="pre-engineered" name="services[]" value="pre-engineered" class="custom-checkbox-input">
+                        <label for="pre-engineered" class="checkbox-label">Pre-Engineered Buildings</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feed-processing" name="services[]" value="feed-processing" class="custom-checkbox-input">
+                        <label for="feed-processing" class="checkbox-label">Feed Processing Machines</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="ppe" name="services[]" value="ppe" class="custom-checkbox-input">
+                        <label for="ppe" class="checkbox-label">Personal Protective Equipment</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="turnkey" name="services[]" value="turnkey" class="custom-checkbox-input">
+                        <label for="turnkey" class="checkbox-label">Turnkey Projects</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="cctv" name="services[]" value="cctv" class="custom-checkbox-input">
+                        <label for="cctv" class="checkbox-label">CCTV Installation</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="electrical-items" name="services[]" value="electrical-items" class="custom-checkbox-input">
+                        <label for="electrical-items" class="checkbox-label">Electrical Items</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="quote-details" class="form-label">Project Details</label>
+                <textarea id="quote-details" name="project-details" rows="4" class="form-textarea" placeholder="Please provide details about your project requirements..." required aria-required="true"></textarea>
+            </div>
+            
+            <div class="terms-checkbox">
+                <input type="checkbox" id="terms" name="terms" class="custom-checkbox-input" required aria-required="true">
+                <label for="terms" class="checkbox-label">I agree to the <a href="#" class="terms-link">Terms & Conditions</a> and <a href="#" class="terms-link">Privacy Policy</a></label>
+            </div>
+            
+            <div class="form-submit">
+                <button type="submit" class="submit-button" aria-label="Submit quote request">Submit Request</button>
+            </div>
+        </form>
+    </div>
+</section>
 
     <section id="contact" class="contact-section" aria-labelledby="contact-title">
         <div class="container">
