@@ -220,4 +220,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+        document.querySelectorAll('.nav-mobile-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const expanded = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', !expanded);
+            });
+        });
+
 });
