@@ -1,7 +1,7 @@
 /* Reset and Base Styles */
 :root {
     --primary-color: #F28C39;
-    --primary-hover: #e07b00;
+    --primary-hover: #226ED9;
     --text-dark: #333;
     --text-light: #666;
     --text-white: #fff;
@@ -314,8 +314,8 @@ a {
 }
 
 .hero-button-contact {
-    background-color: transparent;
-    border: 2px solid var(--text-white);
+    background-color: var(--primary-hover);
+    
     color: var(--text-white);
 }
 
@@ -400,19 +400,47 @@ a {
     border-radius: 0.5rem;
     margin-bottom: 1rem;
 }
-
 .service-link {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.375rem;
+    font-size: 1rem; /* 16px */
+    transition: background-color var(--transition);
+}
+.service-link:hover {
+    background-color: var(--primary-hover);
+}
+
+.whatsapp-buy {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    background-color: #25D366;
+    color: var(--text-white);
+    padding: 0.75rem 1rem;
+    border-radius: 9999px; /* Pill shape */
     display: inline-flex;
     align-items: center;
-    color: var(--primary-color);
-    font-size: 1rem; /* 16px */
-    font-weight: 500;
-    transition: color var(--transition);
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    transition: background-color var(--transition), color var(--transition);
 }
 
-.service-link:hover {
-    color: var(--primary-hover);
+.whatsapp-buy:hover {
+    background-color: #1DA851;
+    color: var(--text-white);
 }
+
+.whatsapp-buy i {
+    font-size: 1.25rem;
+}
+
 
 /* Projects Section */
 .projects-section {
@@ -614,34 +642,70 @@ a {
 
 /* Testimonials Section */
 .testimonials-section {
-    padding: 3rem 0;
+    padding: 4rem 1rem;
     background-color: var(--background-light);
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.testimonials-header .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.testimonials-header .section-description {
+    font-size: 1rem;
+    color: var(--text-light);
+    max-width: 40rem;
+    margin: 0 auto;
+    margin-top: 0.75rem;
 }
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    
+    gap: 2rem;
 }
 
 .testimonial-card {
     background-color: var(--text-white);
-    padding: 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
+    padding: 2rem;
     box-shadow: var(--shadow-md);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-icon {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .testimonial-text {
-    font-size: 1rem; /* 16px */
+    font-size: 1rem;
     color: var(--text-light);
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-style: italic;
 }
 
 .testimonial-author {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 1rem;
 }
 
@@ -649,17 +713,25 @@ a {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .author-name {
-    font-size: 1rem; /* 16px */
+    font-size: 1rem;
     font-weight: 700;
+    color: var(--text-dark);
 }
 
 .author-title {
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.875rem;
     color: var(--text-light);
 }
+
 
 /* News Section */
 .news-section {
@@ -1190,6 +1262,7 @@ a {
     visibility: visible;
 }
 
+
 /* Mobile Media Queries */
 @media (max-width: 48rem) {
     .container {
@@ -1236,6 +1309,12 @@ a {
         height: 28rem;
     }
 
+    .hero-content {
+        max-width: 48rem;
+        padding: 1.25rem;
+    }
+
+
     .hero-title {
         font-size: 2.5rem; /* 40px */
     }
@@ -1271,6 +1350,10 @@ a {
 
     .contact-info-card, .contact-info-item {
         width: 100%;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* stack items vertically */
     }
 
     .footer-grid {
@@ -1323,6 +1406,11 @@ a {
         align-items: flex-start;
     }
 
+    .hero-content {
+        max-width: 48rem;
+        padding: 1.25rem;
+    }
+
     .contact-info {
         flex-direction: row;
         flex-wrap: wrap;
@@ -1361,6 +1449,10 @@ a {
 
     .newsletter-input-container {
         padding: 0;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* stack items vertically */
     }
 
     .newsletter-input {
