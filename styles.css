@@ -1371,6 +1371,13 @@ a {
         padding: 0.5rem 0.75rem;
         font-size: 0.75rem; /* 12px */
     }
+    .footer-grid{
+        padding: 0 0.5rem;
+    }
+
+    .footer-links{
+        padding: 0 0.5rem;
+    }
 
     
 }
