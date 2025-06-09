@@ -293,7 +293,7 @@
                     <h2 class="section-title" id="quote-title">Request a Quote</h2>
                     <p class="section-description">Let us provide a tailored solution for PPEs needs. Fill out the form below to get a detailed quote.</p>
                 </div>
-                <form class="quote-form-grid" aria-label="Quote request form" action="send-email.php" method="POST">
+                <form class="quote-form-grid" aria-label="Quote request form" action="send_email.php" method="POST">
                     <div class="form-group">
                         <label class="form-label" for="quote-name">Full Name</label>
                         <input type="text" id="quote-name" class="form-input" name="name" placeholder="Your Full Name" required aria-required="true">
@@ -310,12 +310,13 @@
                         <label class="form-label" for="quote-service">Service Required</label>
                         <select id="quote-service" class="form-input" name="service" required aria-required="true">
                             <option value="" disabled selected>Select PPEs</option>
-                            <option value="mechanical-installations">Head Protection</option>
-                            <option value="electrical-solutions">Hand Protection</option>
-                            <option value="industrial-automation">Foot Protection</option>
-                            <option value="steel-fabrication">Body Protection</option>
-                            <option value="conveying-systems">Respiratory Protection</option>
-                            <option value="pre-engineered-buildings">Eyes Protection</option>
+                            <option value="head-protection">Head Protection</option>
+                            <option value="hand-protection">Hand Protection</option>
+                            <option value="foot-protection">Foot Protection</option>
+                            <option value="body-protection">Body Protection</option>
+                            <option value="respiratory-protection">Respiratory Protection</option>
+                            <option value="eyes-protection">Eyes Protection</option>
+
                             
                         </select>
                     </div>
@@ -580,5 +581,20 @@
         <i class="ri-whatsapp-fill ri-2x" aria-hidden="true"></i>
         <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
     </a>
+
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const success = params.get('success');
+    if (success === '1') {
+        alert("✅ Message sent successfully!");
+        history.replaceState(null, "", window.location.pathname); // Remove query
+    } else if (success === '0') {
+        alert("❌ Failed to send message. Please try again.");
+        history.replaceState(null, "", window.location.pathname); // Remove query
+    }
+});
+    </script>
 </body>
 </html>
