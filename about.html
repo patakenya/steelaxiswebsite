@@ -97,11 +97,11 @@
                         </button>
                         <div class="dropdown">
                             <div class="dropdown-content">
-                                <a href="#feed-processing-machines" class="dropdown-item">Feed Processing Machines</a>
+                                <a href="products.html#feed-processing-machines" class="dropdown-item">Feed Processing Machines</a>
                                 <a href="ppe.html" class="dropdown-item">Personal Protective Equipment</a>
-                                <a href="#turnkey-projects" class="dropdown-item">Turnkey Projects</a>
+                                <a href="products.html#turnkey-projects" class="dropdown-item">Turnkey Projects</a>
                                 <a href="cctv.html" class="dropdown-item">CCTV Installation</a>
-                                <a href="#electrical-items" class="dropdown-item">Electrical Items</a>
+                                <a href="products.html#electrical-items" class="dropdown-item">Electrical Items</a>
                             </div>
                         </div>
                     </div>
@@ -136,9 +136,9 @@
                 <div class="nav-mobile-group">
                     <button class="nav-mobile-toggle" aria-expanded="false">Fabrication</button>
                     <div class="nav-mobile-collapse">
-                        <a href="#steel-fabrication" class="nav-mobile-link">Steel Fabrication</a>
-                        <a href="#conveying-systems" class="nav-mobile-link">Conveying Systems</a>
-                        <a href="#pre-engineered-buildings" class="nav-mobile-link">Pre-Engineered Buildings</a>
+                        <a href="fabrication.html#steel-fabrication" class="nav-mobile-link">Steel Fabrication</a>
+                        <a href="fabrication.html#conveying-systems" class="nav-mobile-link">Conveying Systems</a>
+                        <a href="fabrication.html#pre-engineered-buildings" class="nav-mobile-link">Pre-Engineered Buildings</a>
                     </div>
                 </div>
 
@@ -163,6 +163,7 @@
             </nav>
         </div>
     </header>
+
 
     <main>
         <section class="hero-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/worker21.png');" aria-labelledby="hero-title">
@@ -555,6 +556,42 @@
             </div>
         </div>
     </footer>
+
+    <a href="#" id="message-button" class="message-button" aria-label="Open contact form to send us a message">
+    <i class="ri-mail-add-fill ri-2x" aria-hidden="true"></i>
+    <span class="message-tooltip">Send us a message</span>
+</a>
+
+<div id="message-modal" class="modal hidden" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-content">
+        <button id="close-modal" class="modal-close" aria-label="Close contact form">
+            <i class="ri-close-line ri-lg" aria-hidden="true"></i>
+        </button>
+        <h2 class="modal-title" id="modal-title">Send Us a Message</h2>
+        <form id="message-form" class="message-form" aria-label="Contact form">
+            <div class="form-group">
+                <label for="message-name">Name</label>
+                <input type="text" id="message-name" name="name" placeholder="Enter your name" required aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="message-phone">Phone</label>
+                <input type="tel" id="message-phone" name="phone" placeholder="Enter your phone number" required aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="message-email">Email</label>
+                <input type="email" id="message-email" name="email" placeholder="Enter your email" required aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="message-text">Message</label>
+                <textarea id="message-text" name="message" rows="5" placeholder="Enter your message" required aria-required="true"></textarea>
+            </div>
+            <div class="g-recaptcha" data-sitekey="your-recaptcha-site-key" data-action="contact"></div>
+            <button type="submit" class="form-submit">Send</button>
+            <p id="message-feedback" class="form-feedback" aria-live="polite"></p>
+        </form>
+    </div>
+</div>
+
 
     <a href="https://wa.me/254740411740?text=Hello%20Steel%20Axis,%20I%20would%20like%20to%20inquire%20about%20your%20services!" class="whatsapp-button" target="_blank" aria-label="Chat with us on WhatsApp">
         <i class="ri-whatsapp-fill ri-2x" aria-hidden="true"></i>

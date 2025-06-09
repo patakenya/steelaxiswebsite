@@ -228,4 +228,80 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+// Message Modal
+const messageButton = document.getElementById('message-button');
+const messageModal = document.getElementById('message-modal');
+const closeModal = document.getElementById('close-modal');
+const messageForm = document.getElementById('message-form');
+
+if (messageButton && messageModal && closeModal) {
+    messageButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        messageModal.classList.remove('hidden');
+        messageModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        messageForm.querySelector('#message-name').focus();
+    });
+
+    closeModal.addEventListener('click', () => {
+        messageModal.classList.add('hidden');
+        messageModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    });
+
+    // Close modal on Esc key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !messageModal.classList.contains('hidden')) {
+            closeModal.click();
+        }
+    });
+
+    // Close modal on outside click
+    messageModal.addEventListener('click', (e) => {
+        if (e.target === messageModal) {
+            closeModal.click();
+        }
+    });
+}
+
+if (messageForm) {
+    messageForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const feedback = document.getElementById('message-feedback');
+        feedback.textContent = '';
+        feedback.classList.remove('error', 'success');
+
+        try {
+            const recaptchaToken = await grecaptcha.execute('your-recaptcha-site-key', { action: 'contact' });
+            const formData = {
+                name: messageForm.querySelector('#message-name').value,
+                phone: messageForm.querySelector('#message-phone').value,
+                email: messageForm.querySelector('#message-email').value,
+                message: messageForm.querySelector('#message-text').value,
+                recaptchaToken,
+            };
+
+            const response = await fetch('http://localhost:3000/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                feedback.textContent = data.message;
+                feedback.classList.add('success');
+                messageForm.reset();
+                setTimeout(() => closeModal.click(), 2000); // Auto-close after 2s
+            } else {
+                feedback.textContent = data.error || 'Failed to send message';
+                feedback.classList.add('error');
+            }
+        } catch (error) {
+            feedback.textContent = 'An error occurred. Please try again.';
+            feedback.classList.add('error');
+        }
+    });
+}
+
 });
