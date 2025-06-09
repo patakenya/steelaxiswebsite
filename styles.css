@@ -1347,7 +1347,7 @@ a {
 }
 
 .form-submit {
-    background-color: var(--primary-color);
+    
     color: var(--text-white);
     padding: 0.75rem 1.5rem;
     border: none;
@@ -1357,9 +1357,6 @@ a {
     transition: background-color var(--transition);
 }
 
-.form-submit:hover {
-    background-color: var(--primary-hover);
-}
 
 .form-feedback {
     font-size: 0.875rem;
