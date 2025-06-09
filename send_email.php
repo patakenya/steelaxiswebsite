@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port       = 587;
 
         $mail->setFrom($email, $name);
-        $mail->addAddress('edwinkkimemia@gmail.com', 'Steel Axis');
+        $mail->addAddress('your@email.com', 'Steel Axis');
 
         $mail->isHTML(true);
         $mail->Subject = "New PPE Quote Request from $name";
